@@ -1,3 +1,142 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+    --erp-blue: #0d6efd;
+    --erp-dark-blue: #084298;
+    --erp-orange: #f97316;
+    --erp-light-orange: #ffedd5;
+    --erp-bg: #f5f7fb;
+    --erp-dark: #1f2937;
+    --erp-border: #e5e7eb;
+}
+
+body {
+    background: var(--erp-bg);
+    color: var(--erp-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.erp-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+.erp-sidebar {
+    width: 260px;
+    background: var(--erp-dark-blue);
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.erp-sidebar-brand {
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background: var(--erp-blue);
+    border-bottom: 4px solid var(--erp-orange);
+}
+
+.erp-sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    border-left: 4px solid transparent;
+}
+
+.erp-sidebar a:hover,
+.erp-sidebar a.active {
+    background: rgba(255, 255, 255, 0.12);
+    border-left-color: var(--erp-orange);
+}
+
+.erp-main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+
+.erp-topbar {
+    height: 64px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--erp-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.erp-content {
+    padding: 24px;
+}
+
+.erp-card {
+    background: #ffffff;
+    border: 1px solid var(--erp-border);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+.erp-card-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--erp-border);
+    font-weight: bold;
+    color: var(--erp-dark-blue);
+}
+
+.erp-card-body {
+    padding: 20px;
+}
+
+.btn-erp-primary {
+    background: var(--erp-blue);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-erp-primary:hover {
+    background: var(--erp-dark-blue);
+    color: #ffffff;
+}
+
+.btn-erp-orange {
+    background: var(--erp-orange);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-erp-orange:hover {
+    background: #ea580c;
+    color: #ffffff;
+}
+
+.erp-page-title {
+    color: var(--erp-dark-blue);
+    font-weight: bold;
+}
+
+.erp-stat-card {
+    border-left: 5px solid var(--erp-orange);
+}
+
+.table thead th {
+    background: var(--erp-dark-blue);
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .erp-sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    .erp-layout {
+        display: block;
+    }
+
+    .erp-main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
