@@ -1,27 +1,56 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanySettingController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseOrderController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\SalesOrderController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return redirect()->route('dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function (): void {
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('customers', CustomerController::class);
+    Route::get('/api/customers-list', [CustomerController::class, 'list'])
+    ->name('customers.list');
+    Route::resource('vendors', VendorController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('inventory', InventoryController::class);
+    Route::resource('sales-orders', SalesOrderController::class);
+    Route::resource('purchase-orders', PurchaseOrderController::class);
+    Route::resource('invoices', InvoiceController::class);
+    Route::resource('payments', PaymentController::class);
+    Route::resource('expenses', ExpenseController::class);
+
+    Route::get('/reports', [ReportController::class, 'index'])
+        ->name('reports.index');
+
+    Route::get('/company-settings', [CompanySettingController::class, 'edit'])
+        ->name('company-settings.edit');
+
+    Route::put('/company-settings', [CompanySettingController::class, 'update'])
+        ->name('company-settings.update');
+
+    Route::get('/profile', [UserProfileController::class, 'edit'])
+        ->name('profile.edit');
+
+    Route::put('/profile', [UserProfileController::class, 'update'])
+        ->name('profile.update');
 });
 
 require __DIR__.'/auth.php';

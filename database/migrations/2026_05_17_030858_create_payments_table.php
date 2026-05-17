@@ -6,20 +6,33 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table): void {
             $table->id();
+
+            $table->foreignId('invoice_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+
+            $table->foreignId('customer_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
+
+            $table->string('payment_number')->unique();
+            $table->date('payment_date');
+            $table->decimal('amount', 12, 2)->default(0);
+            $table->string('payment_method')->default('cash');
+            $table->string('reference_number')->nullable();
+            $table->string('status')->default('completed');
+            $table->text('notes')->nullable();
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('payments');
