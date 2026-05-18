@@ -2,63 +2,103 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vendor;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class VendorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(): Response
     {
-        //
+        $vendors = Vendor::query()
+            ->latest()
+            ->paginate(10)
+            ->withQueryString();
+
+        return Inertia::render('Vendors/Index', [
+            'vendors' => $vendors,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(): Response
     {
-        //
+        return Inertia::render('Vendors/Create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'company_name' => ['nullable', 'string', 'max:255'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:50'],
+            'website' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'city' => ['nullable', 'string', 'max:100'],
+            'state' => ['nullable', 'string', 'max:100'],
+            'postal_code' => ['nullable', 'string', 'max:30'],
+            'country' => ['nullable', 'string', 'max:100'],
+            'notes' => ['nullable', 'string'],
+            'is_active' => ['boolean'],
+        ]);
+
+        $validated['is_active'] = $request->boolean('is_active');
+
+        Vendor::create($validated);
+
+        return redirect()
+            ->route('vendors.index')
+            ->with('success', 'Vendor created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Vendor $vendor): Response
     {
-        //
+        return Inertia::render('Vendors/Show', [
+            'vendor' => $vendor,
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(Vendor $vendor): Response
     {
-        //
+        return Inertia::render('Vendors/Edit', [
+            'vendor' => $vendor,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Vendor $vendor): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'company_name' => ['nullable', 'string', 'max:255'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:50'],
+            'website' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'city' => ['nullable', 'string', 'max:100'],
+            'state' => ['nullable', 'string', 'max:100'],
+            'postal_code' => ['nullable', 'string', 'max:30'],
+            'country' => ['nullable', 'string', 'max:100'],
+            'notes' => ['nullable', 'string'],
+            'is_active' => ['boolean'],
+        ]);
+
+        $validated['is_active'] = $request->boolean('is_active');
+
+        $vendor->update($validated);
+
+        return redirect()
+            ->route('vendors.index')
+            ->with('success', 'Vendor updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Vendor $vendor): RedirectResponse
     {
-        //
+        $vendor->delete();
+
+        return redirect()
+            ->route('vendors.index')
+            ->with('success', 'Vendor deleted successfully.');
     }
 }
