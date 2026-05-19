@@ -1,58 +1,358 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel ERP System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern full-stack Enterprise Resource Planning (ERP) platform built with Laravel, Vue.js, MySQL, and Bootstrap 5.  
+This application helps businesses manage operations including customers, inventory, sales, invoices, vendors, purchasing, and reporting from a centralized web-based dashboard.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This ERP system is designed for small-to-medium businesses that need a centralized solution for managing daily business operations.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The application provides modules for:
 
-## Learning Laravel
+- Customer Management
+- Product & Inventory Management
+- Sales Orders
+- Invoicing
+- Vendor Management
+- Purchase Orders
+- Reporting & Analytics
+- User Authentication
+- Dashboard Metrics
+- Business Administration
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The system is built using a modular architecture that allows future expansion into accounting, HR, payroll, CRM, and logistics.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+# Business Problem Solved
 
-## Agentic Development
+Many growing businesses struggle with:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- Disconnected spreadsheets
+- Manual inventory tracking
+- Poor visibility into sales
+- Inconsistent invoicing
+- Lack of centralized reporting
+- Inefficient operational workflows
+- Duplicate data entry
+- Difficulty scaling operations
 
-```bash
-composer require laravel/boost --dev
+This ERP system solves those problems by consolidating business processes into a single integrated platform.
 
-php artisan boost:install
-```
+---
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+# Core Business Benefits
 
-## Contributing
+## 1. Centralized Business Operations
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+All operational data is managed from one application:
 
-## Code of Conduct
+- Customers
+- Products
+- Orders
+- Vendors
+- Inventory
+- Invoices
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+This reduces operational fragmentation and improves efficiency.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 2. Inventory Visibility
 
-## License
+Businesses can:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Track stock levels
+- Monitor inventory movement
+- Reduce stock shortages
+- Prevent overstocking
+- Manage product catalogs efficiently
+
+---
+
+## 3. Streamlined Sales Management
+
+The system simplifies:
+
+- Sales order processing
+- Customer tracking
+- Invoice generation
+- Payment management
+- Revenue reporting
+
+---
+
+## 4. Improved Reporting & Analytics
+
+Management gains visibility into:
+
+- Sales performance
+- Inventory trends
+- Customer activity
+- Revenue metrics
+- Operational KPIs
+
+---
+
+## 5. Scalable Business Infrastructure
+
+The ERP platform provides a scalable foundation that supports future growth without relying on disconnected tools or spreadsheets.
+
+---
+
+# Core Features
+
+## Dashboard
+
+- Business KPIs
+- Revenue summaries
+- Sales analytics
+- Inventory alerts
+- Recent activity feeds
+
+---
+
+## Customer Management
+
+- Customer profiles
+- Contact management
+- Customer history
+- Sales tracking
+- Customer search/filtering
+
+---
+
+## Product Management
+
+- Product catalog
+- Categories
+- SKU management
+- Pricing management
+- Product inventory tracking
+
+---
+
+## Inventory Management
+
+- Stock tracking
+- Inventory adjustments
+- Inventory alerts
+- Warehouse-ready structure
+- Inventory movement history
+
+---
+
+## Sales Orders
+
+- Order creation
+- Order tracking
+- Order status management
+- Customer order history
+
+---
+
+## Invoice Management
+
+- Invoice generation
+- Payment tracking
+- Invoice statuses
+- Printable invoices
+
+---
+
+## Vendor Management
+
+- Vendor records
+- Purchase management
+- Supplier tracking
+
+---
+
+## Reporting
+
+- Sales reports
+- Inventory reports
+- Customer reports
+- Revenue analytics
+
+---
+
+# Technology Stack
+
+## Backend
+
+- PHP 8.x
+- Laravel 11/12
+- RESTful Controllers
+- Laravel Validation
+- Laravel Eloquent ORM
+- Laravel Middleware
+- Laravel Authentication
+
+---
+
+## Frontend
+
+- Vue.js 3
+- Pinia State Management
+- Axios
+- Bootstrap 5
+- Blade Templates
+- JavaScript (ES6)
+
+---
+
+## Database
+
+- MySQL / MariaDB
+
+---
+
+## Build Tools
+
+- Vite
+- NPM
+
+---
+
+## Authentication & Security
+
+- Laravel Breeze
+- CSRF Protection
+- Session Authentication
+- Form Validation
+- Route Middleware Protection
+
+---
+
+## Infrastructure
+
+- Apache
+- Ubuntu Linux
+- Docker (development environment)
+- GitHub Version Control
+
+---
+
+# System Architecture
+
+The application follows a layered MVC architecture:
+
+```text
+Frontend (Vue.js + Bootstrap)
+        ↓
+Laravel Controllers
+        ↓
+Business Logic / Services
+        ↓
+Eloquent Models
+        ↓
+MySQL Database
+````
+
+This architecture provides:
+
+* Clean separation of concerns
+* Maintainability
+* Scalability
+* Reusable business logic
+* Organized code structure
+
+---
+
+# Example Use Cases
+
+## Retail Businesses
+
+Manage:
+
+* Inventory
+* Sales
+* Customers
+* Vendors
+* Invoices
+
+---
+
+## Distribution Companies
+
+Track:
+
+* Products
+* Warehouse inventory
+* Purchase orders
+* Customer orders
+
+---
+
+## Service Companies
+
+Handle:
+
+* Client management
+* Billing
+* Reporting
+* Operational workflows
+
+---
+
+# Scalability
+
+The ERP system is designed to support:
+
+* Multi-department operations
+* Large product catalogs
+* High transaction volumes
+* Additional business modules
+* API integrations
+* Cloud deployment
+
+---
+
+# Future Enhancements
+
+Potential future modules include:
+
+* Accounting
+* Payroll
+* Human Resources
+* CRM
+* POS Integration
+* Shipping & Logistics
+* Mobile Applications
+* AI-powered reporting
+* Multi-tenant SaaS support
+
+---
+
+# Developer Highlights
+
+This project demonstrates expertise in:
+
+* Enterprise application architecture
+* Laravel full-stack development
+* Vue.js integration
+* Business workflow automation
+* ERP system design
+* Database architecture
+* API development
+* Responsive UI/UX design
+
+---
+
+# Author
+
+Developed by Keith Jordan
+Senior Full Stack Web Application Developer
+
+Specializing in:
+
+* Laravel
+* PHP
+* Vue.js
+* ERP systems
+* SaaS platforms
+* Database architecture
+* Enterprise web applications
