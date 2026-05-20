@@ -357,4 +357,10 @@ Specializing in:
 * Database architecture
 * Enterprise web applications
 
+---
+
+## Screenshots
+
+### Dashboard
+
   ![Dashboard Screenshot](screenshots/ERP_Vue_Dashboard.png)
