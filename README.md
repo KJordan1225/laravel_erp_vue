@@ -356,3 +356,5 @@ Specializing in:
 * SaaS platforms
 * Database architecture
 * Enterprise web applications
+
+  ![Dashboard Screenshot](screenshots/ERP_Vue_Dashboard.png)
