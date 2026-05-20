@@ -1,16 +1,4 @@
-````markdown
 # EnterpriseERP
-
-<div align="center">
-
-![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge&logo=laravel)
-![Vue.js](https://img.shields.io/badge/Vue.js-3-green?style=for-the-badge&logo=vue.js)
-![MySQL](https://img.shields.io/badge/MySQL-8-blue?style=for-the-badge&logo=mysql)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap)
-
-A modern full-stack Enterprise Resource Planning (ERP) platform built with Laravel, Vue.js, MySQL, Axios, Pinia, and Bootstrap 5.
-
-</div>
 
 ---
 
