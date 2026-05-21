@@ -4,7 +4,7 @@
 
 # Overview
 
-EnterpriseERP is a scalable, modular, multi-tenant ERP platform designed for businesses that need an all-in-one solution for:
+Laravel ERP Vue is a scalable, modular, multi-tenant ERP platform designed for businesses that need an all-in-one solution for:
 
 - Customer Management
 - Sales & Invoicing
