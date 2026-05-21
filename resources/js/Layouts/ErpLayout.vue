@@ -18,7 +18,10 @@
             <Link href="/expenses">Expenses</Link>
             <Link href="/reports">Reports</Link>
             <Link href="/company-settings">Company Settings</Link>
-            <Link href="/profile">Profile</Link>
+            <Link href="/profile">Profile</Link> 
+            <a href="{{ route('hr-payroll.index') }}" class="nav-link">
+                HR Payroll
+            </a>           
         </aside>
 
         <main class="erp-main">

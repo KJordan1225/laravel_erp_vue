@@ -5,6 +5,7 @@ use App\Http\Controllers\CompanySettingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\HRPayrollController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PaymentController;
@@ -51,6 +52,11 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
 
     Route::put('/profile', [UserProfileController::class, 'update'])
         ->name('profile.update');
+
+    Route::resource('hr-payroll', HRPayrollController::class)
+        ->parameters([
+            'hr-payroll' => 'employee',
+        ]);
 });
 
 require __DIR__.'/auth.php';
