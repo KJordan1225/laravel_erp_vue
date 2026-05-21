@@ -445,7 +445,7 @@ resources/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/enterprise-erp.git
+git clone https://github.com/KJordan1225/laravel-erp-vue.git
 ```
 
 ---
