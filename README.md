@@ -147,25 +147,25 @@ EnterpriseERP centralizes business operations into a single platform.
 
 ## Dashboard
 
-![Dashboard Screenshot](docs/screenshots/dashboard.png)
+![Dashboard Screenshot](screenshots/ERP_Vue_Dashboard.png)
 
 ---
 
 ## CRM Module
 
-![CRM Screenshot](docs/screenshots/crm-module.png)
+![CRM Screenshot](screenshots/ERP_Vue_Customer.png)
 
 ---
 
 ## Inventory Module
 
-![Inventory Screenshot](docs/screenshots/inventory-module.png)
+![Inventory Screenshot](docs/screenshots/ERP_Vue_Inventory-module.png)
 
 ---
 
 ## Invoice Management
 
-![Invoice Screenshot](docs/screenshots/invoice-module.png)
+![Invoice Screenshot](screenshots/ERP_Vue_Invoice.png)
 
 ---
 
