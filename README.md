@@ -1,4 +1,4 @@
-# EnterpriseERP
+# Laravel ERP Vue
 
 ---
 
