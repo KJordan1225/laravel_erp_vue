@@ -159,7 +159,7 @@ EnterpriseERP centralizes business operations into a single platform.
 
 ## Inventory Module
 
-![Inventory Screenshot](screenshots/ERP_Vue_Inventory-module.png)
+![Inventory Screenshot](screenshots/ERP_Vue_Inventory.png)
 
 ---
 
